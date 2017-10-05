@@ -121,7 +121,7 @@ function prevalPlugin({types: t, template, transformFromAst}) {
           }
           return result.value
         })
-        const absolutePath = p.join(p.dirname(filename), source.node.value)
+        const absolutePath = p.resolve(p.dirname(filename), source.node.value)
         try {
           // allow for transpilation of required modules
           require('babel-register')
